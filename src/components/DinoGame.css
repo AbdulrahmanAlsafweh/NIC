@@ -95,7 +95,7 @@
     animation: run 0.3s  forwards  ;
     animation-iteration-count: 10;
 } 
-@media screen and (max-width: 415px) {
+@media screen and (max-width: 500px) {
     .dino {
         animation-iteration-count: 7;
     }
