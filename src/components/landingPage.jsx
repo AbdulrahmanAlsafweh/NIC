@@ -4,9 +4,24 @@ import "./DinoGame.css";
 import GameOver from "../assets/gameover_text.png";
 import scroll from '../assets/arrow.png'
 import Navbar from "./navbar";
+import arrow from '../assets/back.png'
+import logo from '../assets/nic_head.svg'
+import wMenuI from '../assets/dots.png'
+import phoneCall from '../assets/call.png'
+import video from '../assets/video.png'
+import camera from '../assets/camera.png'
+import record from '../assets/voice.png'
+import attach from '../assets/attach.png'
+import emoji from '../assets/smile.png'
+import user from '../assets/profile.png'
+import sendMessage from '../assets/message.png'
 const DinoGame = () => {
-
-
+  // The needed time for whatsapp chatting
+  const date = new Date();
+  const hours24 = date.getHours();
+  const minutes = date.getMinutes();
+  const hours12 = hours24 % 12 || 12;  
+  const ampm = hours24 >= 12 ? "PM" : "AM";  
   ////////////////////
   // All Used useRef
   ///////////////////
@@ -29,8 +44,7 @@ const DinoGame = () => {
   const scrollArrowRef = useRef(null);
   const textContainer2Ref = useRef(null);
   const scrollDownRef = useRef(null);
-
-
+  // const whatsappInput = useRef(null);
   /////////////////////
   // All used useState
   /////////////////////
@@ -38,13 +52,17 @@ const DinoGame = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [screenHeight, setScreenHeight] = useState(window.innerHeight);
   const [hidePage, setHidePage] = useState(false);
-  const [ hideHUD,setHideHUD]  = useState(false);
-  const [ showFirstM,setShowFirstM] = useState(false);
+  const [hideHUD, setHideHUD] = useState(false);
+  const [showFirstM, setShowFirstM] = useState(false);
   const [showSecondM, setShowSecondM] = useState(false);
   const [showThirdM, setShowThirdM] = useState(false);
-  const[allowScroll,setAllowScroll] = useState(false);
-  const [hideLanding,setHideLanding] = useState(false);
-
+  const [allowScroll, setAllowScroll] = useState(false);
+  const [hideLanding, setHideLanding] = useState(false);
+  const [showMessage, setShowMessage] = useState(false);
+  const [NICTeamStatus,setNICTeamStatus] = useState('Online');
+  const [hideCam, setHideCam] = useState(false);
+  const [hideMic, setHideMic] = useState(false);
+  const [whatsappInput,setWhatsappMessage] = useState("Message...");
   useEffect(() => {
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
@@ -59,32 +77,31 @@ const DinoGame = () => {
     };
   }, [screenWidth]);
 
+  //  useEffect(()=>{
 
-//  useEffect(()=>{
+  //   console.log(window.scrollY)
+  //   console.log(allowScroll)
+  //   if(allowScroll){
+  //     scrollDownRef.current.scrollIntoView({ behavior: "smooth" });
+  //     console.log("done scroll")
+  //   }
 
-//   console.log(window.scrollY)
-//   console.log(allowScroll)
-//   if(allowScroll){
-//     scrollDownRef.current.scrollIntoView({ behavior: "smooth" });
-//     console.log("done scroll")
-//   }
+  //  },[window.scrollY])
+  const handleScroll = () => {
+    console.log("Scroll position:", window.pageYOffset);
+    if (allowScroll && window.pageYOffset > 0) {
+      scrollDownRef.current.scrollIntoView({ behavior: "smooth" });
+      setTimeout(() => {
+        setHideLanding(true);
+      }, 400);
+    }
+  };
 
-//  },[window.scrollY])
-const handleScroll = () => {
-  console.log("Scroll position:", window.pageYOffset);
-  if(allowScroll && window.pageYOffset > 0 ){
-    scrollDownRef.current.scrollIntoView({behavior:'smooth'})
-    setTimeout(()=>{
-    setHideLanding (true)
-    },400)
-  }
-};
+  window.addEventListener("scroll", handleScroll);
 
-window.addEventListener("scroll", handleScroll);
-   
   useEffect(() => {
     /////////////////////////////////////////
-    // calculating the distance and duration 
+    // calculating the distance and duration
     /////////////////////////////////////////
     const distance = screenWidth / 2 - 40;
 
@@ -92,11 +109,11 @@ window.addEventListener("scroll", handleScroll);
     var mChat;
     if (screenWidth < 500) {
       duration = 2000;
-      mChat=10
+      mChat = 10;
       console.log(duration);
     } else {
       duration = 3000;
-      mChat=screenWidth/2.5
+      mChat = screenWidth / 2.5;
     }
 
     /////////////////////////////////
@@ -304,7 +321,66 @@ window.addEventListener("scroll", handleScroll);
                 duration: 2000,
                 onComplete: () => {
                   setHideHUD(true);
+                  setTimeout(() => {
+                    setShowMessage(true);
+                    setNICTeamStatus("Typing...");
+                    setTimeout(()=>{
+                      
+                        
+                       
+                        setTimeout(()=>{
+                          setNICTeamStatus("online");
+                           setShowFirstM(true);
+                           setTimeout(()=>{
+                           setHideCam(true);
+                            setHideMic(true);
+                            setWhatsappMessage("Yes i'm facing many problems")
+                            setTimeout(()=>{
+                              setWhatsappMessage("Message...");
+                              setHideCam(false);
+                              setHideMic(false);
+                              setShowSecondM(true);
 
+
+                              setTimeout(()=>{
+                                setNICTeamStatus("Typing...");
+
+                                setTimeout(()=>{
+                                  setShowThirdM(true);
+                                  setNICTeamStatus("Online")
+                                },500)
+                              },800)
+
+
+                            },500)
+                           },700)
+                            //  KUTE.to(whatsappInput.current, {
+                            //    text: "yes i'm facing many problems",
+                            //  },
+                            // {duration:500,
+                            //   onComplete:(()=>{
+                            //     setShowSecondM(true);
+                            //     setTimeout(()=>{
+                            //        KUTE.to(
+                            //          whatsappInput.current,
+                            //          {
+                            //            text: "Message...",
+                            //          },
+                            //          {
+                            //            duration: 500,
+                            //          }
+                            //        ).start();
+                            //     },400)
+                               
+                            //   })
+                            // }).start();
+                             
+                          //  setTimeout(() => {
+                          //    setShowSecondM(true);
+                          //  }, 400);
+                        })
+                    },1000)
+                  }, 400);
                   // KUTE.fromTo(
                   //   dinoRef.current,
                   //   {
@@ -491,15 +567,13 @@ window.addEventListener("scroll", handleScroll);
   }, [screenWidth]);
 
   return (
-    <div>
+    <div className="relative">
       <div
         className={`
     
       w-full h-screen flex items-center bg-[#f7f7f7] justify-center  
       overflow-x-hidden
-      ${
-        hideLanding ? "hidden" : ''
-      }
+      ${hideLanding ? "hidden" : ""}
       `}
       >
         {showImage && (
@@ -721,7 +795,7 @@ ${hideHUD ? "hidden" : ""}
         {/* Scroll caution after the conv ends it will start to jump until the user scroll down  */}
         {/* //////////////////////////////////////////////////////////////////////////////////////// */}
 
-        <div
+        {/* <div
           className="absolute bottom-0 flex justify-center flex-col items-center center w-[52px] h-[52px] mb-10"
           ref={scrollArrowRef}
         >
@@ -731,19 +805,166 @@ ${hideHUD ? "hidden" : ""}
               <img src={scroll} alt="" />
             </>
           )}
+        </div> */}
+      </div>
+      {/* whatsapp */}
+
+      <div
+        className={`absolute  
+        ${showMessage ? "" : "hidden"}
+        shadow-2xl mt-10 mb-10 rounded-2xl rounded-t-none   top-0 left-1/2 transform -translate-x-1/2 w-[25%] h-[90%] flex flex-col  items-start bg-wBg bg-cover  `}
+      >
+        <div className="bg-black w-full h-6 rounded-t-full flex justify-center items-center absolute -top-6">
+            <div className="bg-gray-600 flex justify-center items-center rounded-full w-3 h-3"> 
+              <div className="bg-black rounded-full w-1 h-1">
+
+              </div>
+            </div>
+        </div>
+        <div className="w-full flex flex-col h-full  rounded-2xl">
+          {/* /////////////////////// */}
+          {/* Header of whatsapp */}
+          {/* /////////////////////// */}
+          <div className="flex bg-[#075e54] w-[100%] justify-between items-center  px-4 py-3 ">
+            <div className="flex flex-row space-x-3 items-center">
+              <img src={arrow} alt="" className="w-5 h-5" />
+              <img
+                src={logo}
+                alt=""
+                className="w-8 h-8 bg-white rounded-full "
+              />
+              <div className="flex flex-col">
+                <p className="text-white text-sm">NIC TEAM</p>
+                <p className="text-white text-xs">{NICTeamStatus}</p>
+              </div>
+            </div>
+
+            <div className="flex flex-row  items-center space-x-3">
+              <img src={video} className="w-5 h-5" alt="" />
+              <img src={phoneCall} className="w-4 h-4" alt="" />
+              <img src={wMenuI} className="w-5 h-5" alt="" />
+            </div>
+          </div>
+          {/* ENd of header of the whatsapp */}
+
+          {/* chatting */}
+
+          <div className="flex self-center items-center justify-center mt-2">
+            <p className="bg-[#128c7e] text-white rounded-lg px-2 py-1 text-sm">
+              Today
+            </p>
+          </div>
+          {/* ////////////////////// */}
+          {/* THe NIC MESSAGE */}
+          <div
+            className={`flex
+          ${showFirstM ? "" : "hidden"}
+          relative flex-row space-x-2 mt-3 ml-4  items-center w-3/4`}
+          >
+            {/* <img
+                src={logo}
+                className="bg-white   rounded-full w-7 mb-auto h-7  "
+                alt=""
+              /> */}
+            <p className="bg-white rounded-xl rounded-tl-none text-sm   px-4 py-3 pb-5">
+              Hello Dear,it seems you'r having trouble with internet
+              <div className="absolute top-0  bg-white -left-3 w-5 h-3 rounded-bl-full "></div>
+            </p>
+            <span className="absolute right-2 bottom-1">
+              <p className="text-xs text-gray-500">
+                {hours12}:{minutes} {ampm}
+              </p>
+            </span>
+          </div>
+
+          {/* The client first reply */}
+          <div
+            className={`flex  relative w-fit   mr-4 ml-auto  mt-2
+            ${showSecondM ? "" : "hidden"}
+            `}
+          >
+            <p className="bg-[#dcf8c6] rounded-xl rounded-tr-none pb-4 text-sm px-4 py-2">
+              Yes i'm facing many problems
+              <div className="absolute top-0  bg-[#dcf8c6] -right-3 w-5 h-3 rounded-br-full "></div>
+            </p>
+            <span className="absolute  right-3    bottom-0">
+              <p className="text-xs text-gray-500">
+                {hours12}:{minutes} {ampm}
+              </p>
+            </span>
+            {/* <img src={user} className="w-14 h-14  brounded-full " alt="" /> */}
+          </div>
+
+          {/* The second message of NIC Team   */}
+          <div
+            className={`flex
+          ${showThirdM ? "" : "hidden"}
+          relative flex-row space-x-2 mt-1 ml-4 items-center w-fit`}
+          >
+            {/* <img
+                src={logo}
+                className="bg-white rounded-full w-10 h-10 mt-2 ml-2"
+                alt=""
+              /> */}
+            <p className="bg-white rounded-xl text-sm   rounded-tl-none px-4 py-3 pb-5">
+              <div className="absolute top-0  bg-white -left-3 w-5 h-3 rounded-bl-full "></div>
+              I'll help you
+            </p>
+            <span className="absolute right-2 bottom-1">
+              <p className="text-xs text-gray-500">
+                {hours12}:{minutes} {ampm}
+              </p>
+            </span>
+          </div>
+          {/* The bottom of whatsapp */}
+          <div className="flex mt-auto flex-row  space-x-3 m-3 ">
+            <div className="flex w-full justify-between bg-white rounded-full">
+              <div className="flex flex-row px-3 py-3 items-center overflow-y-auto ">
+                <img src={emoji} className="  w-5  h-5 mr-2" alt="" />
+                <p
+                  // ref={whatsappInput}
+                  className="text-gray-400 "
+                >
+                  {whatsappInput}
+                </p>
+              </div>
+              <div className="flex gap-3 mr-3 items-center">
+                <img src={attach} className="w-5 h-5 " alt="" />
+
+                <img
+                  src={camera}
+                  className={`w-5 h-5
+                  ${hideCam ? "hidden" : ""}
+                  `}
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div className="flex bg-[#075e54] px-3  my-auto mx-auto py-2 items-center justify-center rounded-full">
+              <img
+                src={hideMic ? sendMessage : record}
+                alt=""
+                className="w-5 h-5 "
+              />
+            </div>
+          </div>
         </div>
 
+        <div className="bg-black w-full h-3 rounded-b-full -bottom-3">
 
-      </div >
-       
-       <div 
-       className={`bg-red-400 h-[100vh]
-        ${allowScroll ? '' : 'hidden'}
+
+        </div>
+      </div>
+
+      <div
+        className={`bg-red-400 h-[100vh]
+        ${allowScroll ? "" : "hidden"}
        `}
-       ref={scrollDownRef}
-       >
+        ref={scrollDownRef}
+      >
         <Navbar />
-      </div> 
+      </div>
     </div>
   );
 };

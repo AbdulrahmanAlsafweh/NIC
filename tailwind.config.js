@@ -13,6 +13,7 @@ module.exports = {
         cactus: "url('./assets/cactus1.png')",
         tripleCactus: "url('./assets/cactus2.png')",
         user: "url('./assets/user.png')",
+        wBg: "url('./assets/whatsappbg.png')",
 
         deadDino: "url('./assets/main-character4.png')",
         Dino: "url('./assets/main-character3.png')",
