@@ -3,6 +3,15 @@ module.exports = {
   content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      colors: {
+        blackk: "#2A222D",
+        primary: "#6B62AC",
+        secondary: "#D0DE55",
+        whitee: "#E4EAEE",
+      },
+      fontFamily: {
+        Courier: ["Courier Prime"],
+      },
       backgroundImage: {
         bg: "url('./assets/banner.png')",
         trex: "url('./assets/main-character1.png')",
@@ -14,7 +23,7 @@ module.exports = {
         tripleCactus: "url('./assets/cactus2.png')",
         user: "url('./assets/user.png')",
         wBg: "url('./assets/whatsappbg.png')",
-
+        homePage: "url(./assets/hero/hero.jpeg)",
         deadDino: "url('./assets/main-character4.png')",
         Dino: "url('./assets/main-character3.png')",
       },
@@ -40,5 +49,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };

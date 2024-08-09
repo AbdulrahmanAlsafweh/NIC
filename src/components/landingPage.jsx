@@ -348,6 +348,24 @@ const DinoGame = () => {
                                 setTimeout(()=>{
                                   setShowThirdM(true);
                                   setNICTeamStatus("Online")
+                                   setInterval(() => {
+                                     KUTE.fromTo(
+                                       scrollArrowRef.current,
+                                       { translateY: 0, translateX: 0 },
+                                       { translateY: -50, translateX: 0 },
+                                       {
+                                         duration: 1000,
+                                         onComplete: () => {
+                                           KUTE.fromTo(
+                                             scrollArrowRef.current,
+                                             { translateY: -50, translateX: 0 },
+                                             { translateY: 0, translateX: 0 },
+                                             { duration: 1000 }
+                                           ).start();
+                                         },
+                                       }
+                                     ).start();
+                                   }, 2000);
                                 },500)
                               },800)
 
@@ -420,24 +438,24 @@ const DinoGame = () => {
                   //                   },
                   //                 }
                   //               ).start();
-                  //               setInterval(() => {
-                  //                 KUTE.fromTo(
-                  //                   scrollArrowRef.current,
-                  //                   { translateY: 0, translateX: 0 },
-                  //                   { translateY: -50, translateX: 0 },
-                  //                   {
-                  //                     duration: 1000,
-                  //                     onComplete: () => {
-                  //                       KUTE.fromTo(
-                  //                         scrollArrowRef.current,
-                  //                         { translateY: -50, translateX: 0 },
-                  //                         { translateY: 0, translateX: 0 },
-                  //                         { duration: 1000 }
-                  //                       ).start();
-                  //                     },
-                  //                   }
-                  //                 ).start();
-                  //               }, 2000);
+                                // setInterval(() => {
+                                //   KUTE.fromTo(
+                                //     scrollArrowRef.current,
+                                //     { translateY: 0, translateX: 0 },
+                                //     { translateY: -50, translateX: 0 },
+                                //     {
+                                //       duration: 1000,
+                                //       onComplete: () => {
+                                //         KUTE.fromTo(
+                                //           scrollArrowRef.current,
+                                //           { translateY: -50, translateX: 0 },
+                                //           { translateY: 0, translateX: 0 },
+                                //           { duration: 1000 }
+                                //         ).start();
+                                //       },
+                                //     }
+                                //   ).start();
+                                // }, 2000);
                   //             }, 400);
                   //           }, 400);
                   //         }, 400);
@@ -795,8 +813,8 @@ ${hideHUD ? "hidden" : ""}
         {/* Scroll caution after the conv ends it will start to jump until the user scroll down  */}
         {/* //////////////////////////////////////////////////////////////////////////////////////// */}
 
-        {/* <div
-          className="absolute bottom-0 flex justify-center flex-col items-center center w-[52px] h-[52px] mb-10"
+        <div
+          className="absolute bottom-0 flex justify-end flex-col items-end center w-[52px] h-[52px] mb-10"
           ref={scrollArrowRef}
         >
           {showThirdM && (
@@ -805,7 +823,7 @@ ${hideHUD ? "hidden" : ""}
               <img src={scroll} alt="" />
             </>
           )}
-        </div> */}
+        </div>
       </div>
       {/* whatsapp */}
 
@@ -815,11 +833,9 @@ ${hideHUD ? "hidden" : ""}
         shadow-2xl mt-10 mb-10 rounded-2xl rounded-t-none   top-0 left-1/2 transform -translate-x-1/2 w-[25%] h-[90%] flex flex-col  items-start bg-wBg bg-cover  `}
       >
         <div className="bg-black w-full h-6 rounded-t-full flex justify-center items-center absolute -top-6">
-            <div className="bg-gray-600 flex justify-center items-center rounded-full w-3 h-3"> 
-              <div className="bg-black rounded-full w-1 h-1">
-
-              </div>
-            </div>
+          <div className="bg-gray-600 flex justify-center items-center rounded-full w-3 h-3">
+            <div className="bg-black rounded-full w-1 h-1"></div>
+          </div>
         </div>
         <div className="w-full flex flex-col h-full  rounded-2xl">
           {/* /////////////////////// */}
@@ -951,10 +967,7 @@ ${hideHUD ? "hidden" : ""}
           </div>
         </div>
 
-        <div className="bg-black w-full h-3 rounded-b-full -bottom-3">
-
-
-        </div>
+        <div className="bg-black w-full h-3 rounded-b-full -bottom-3"></div>
       </div>
 
       <div
