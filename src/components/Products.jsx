@@ -1,10 +1,11 @@
 import dinoProduct from "../assets/products/dino-ping.jpg";
 import dinoTshirt from "../assets/products/dino-tshirt.jpg";
+import keyChaing from "../assets/products/keychaing.webp";
 
 export default function Products() {
   return (
-    <div className="h-screen">
-      <div className=" mt-auto shadow-gray-400 bg-blackk  shadow-sm st w-screen h-screen pt-36 pb-36 flex flex-col">
+    <div className="h-fit ">
+      <div className=" mt-auto  bg-blackk   w-screen h-fit pt-36 pb-36 flex flex-col">
         <div className="flex   pb-2    w-fit mx-auto  items-center  flex-col">
           <p className="font-Courier mb-5  text-center text-secondary text-[36px] ">
             Our Products
@@ -15,40 +16,68 @@ export default function Products() {
           </p>
         </div>
 
-        <div className="flex   justify-around mt-16 flex-row mx-16 ">
-          <div className="flex w-fit cursor-pointer   gap-3 transition-all hover:scale-105 bg-whitee delay-[25] rounded-2xl pb-10 hover:border-2 hover:border-secondary justify-between text-center items-center flex-col">
-            <div className="h-[50%]">
-              <img
-                className="cover rounded-t-2xl"
-                src={dinoProduct}
-                //   height={150}
-                width={450}
-                alt=""
-              />
+        <div className="flex    mt-16  mx-16 ">
+          <div className="justify-around mx-auto shadow-lg shadow-black flex flex-row w-[100%] bg-primary py-10 rounded-lg ">
+            <div className=" hover:scale-105 shadow-md cursor-pointer  shadow-black transition-all delay-75 flex flex-col rounded-lg  w-[300px] h-fit bg-whitee">
+              <div className="relative  h-[300px] ">
+                <img
+                  className="rounded-t-lg object-fill h-full w-full"
+                  src={dinoProduct}
+                  alt=""
+                />
+                <span className="absolute top-0 right-0  bg-whitee font-Courier text-black px-2 mt-5 rounded-md rounded-r-none text-lg flex items-center justify-center italic ">
+                  Special
+                </span>
+              </div>
+              <div className=" pb-5 pt-2">
+                <p className="font-Courier mx-auto w-fit text-blackk text-lg ">
+                  Dino T-Shirt
+                </p>
+                <p className="text-black  w-fit mx-auto font-Courier">4.5$</p>
+              </div>
             </div>
-            <p className="text-black text-lg font-Courier ">Dino Pin</p>
-            {/* <p className="text-gray-700  ">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum,
-                iusto!{" "}
-              </p> */}
-          </div>
-          <div className="flex w-fit cursor-pointer h-[650px]   gap-3 transition-all hover:scale-105 bg-whitee delay-[25] rounded-2xl pb-10 hover:border-2 hover:border-secondary justify-between text-center items-center flex-col">
-            <div className="h-[450px] w-full">
-              <img
-                className="cover rounded-t-2xl"
-                src={dinoTshirt}
-                //   height={150}
-                width={450}
-                alt=""
-              />
+
+            <div className=" hover:scale-105 cursor-pointer  transition-all shadow-md shadow-black delay-75 flex flex-col rounded-lg  w-[300px] h-fit bg-whitee">
+              <div className="relative h-[300px] ">
+                <img
+                  className="rounded-t-lg object-fill h-full w-full"
+                  src={keyChaing}
+                  alt=""
+                />
+                <span className="absolute top-0 right-0  bg-whitee font-Courier text-black px-2 mt-5 rounded-md rounded-r-none text-lg flex items-center justify-center italic ">
+                  Special
+                </span>
+              </div>
+              <div className=" pb-5 pt-2">
+                <p className="font-Courier mx-auto w-fit text-blackk text-lg ">
+                  Dino T-Shirt
+                </p>
+                <p className="text-black  w-fit mx-auto font-Courier">3$</p>
+              </div>
             </div>
-            <p className="text-black text-lg font-Courier ">Dino Pin</p>
-            {/* <p className="text-gray-700  ">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum,
-                iusto!{" "}
-              </p> */}
+            <div className=" hover:scale-105 transition-all  cursor-pointer  shadow-md shadow-black delay-75 flex flex-col rounded-lg  w-[300px] h-fit bg-whitee">
+              <div className="relative  h-[300px] ">
+                <img
+                  className="rounded-t-lg contain-cover h-full w-full"
+                  src={dinoTshirt}
+                  alt=""
+                />
+                <span className="absolute top-0 right-0  bg-whitee font-Courier text-black px-2 mt-5 rounded-md rounded-r-none text-lg flex items-center justify-center italic ">
+                  Special
+                </span>
+              </div>
+              <div className=" pb-5 pt-2">
+                <p className="font-Courier mx-auto w-fit text-blackk text-lg ">
+                  Dino T-Shirt
+                </p>
+                <p className="text-black  w-fit mx-auto font-Courier">10$</p>
+              </div>
+            </div>
           </div>
         </div>
+        {/* <div className="bg-white w-screen h-[250px] ">
+
+ </div> */}
       </div>
     </div>
   );

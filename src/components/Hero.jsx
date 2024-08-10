@@ -66,37 +66,39 @@ https://dev.socrata.com/
           </div>
 
           <div className="flex cursor-pointer  justify-around mt-16 flex-row mx-16 ">
-            <div className="flex w-1/4 gap-3 transition-all hover:scale-110  delay-[25] rounded-2xl py-10 hover:border-2 hover:border-secondary justify-center text-center items-center flex-col">
-              <img src={servers} height={44} width={44} alt="" />
-              <p className="text-black text-lg font-Courier ">
-                Server Installation
-              </p>
-              <p className="text-gray-700  mt-5 w-[50%] ">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum,
-                iusto!{" "}
-              </p>
-            </div>
+            <div className="bg-primary flex flex-row justify-around h-fit pt-10 pb-10  mx-auto shadow-md shadow-black   w-[100%]   py-10 rounded-lg">
+              <div className="flex w-1/4 gap-3 transition-all hover:scale-110  delay-[25] rounded-2xl py-10 hover:border-2 hover:border-secondary justify-center text-center items-center flex-col">
+                <img src={servers} height={44} width={44} alt="" />
+                <p className="text-black text-lg font-Courier ">
+                  Server Installation
+                </p>
+                <p className="text-gray-700  mt-5 w-[50%] ">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Rerum, iusto!{" "}
+                </p>
+              </div>
 
-            <div className="flex hover:scale-110  w-1/4 justify-center gap-3 text-center items-center flex-col transition-all delay-[25] rounded-2xl py-10 hover:border-2 hover:border-secondary">
-              <img src={websites} height={44} width={44} alt="" />
-              <p className="text-black text-lg font-Courier ">
-                Websites Building
-              </p>
-              <p className="text-gray-700 mt-5 w-[50%] ">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum,
-                iusto!{" "}
-              </p>
-            </div>
+              <div className="flex hover:scale-110  w-1/4 justify-center gap-3 text-center items-center flex-col transition-all delay-[25] rounded-2xl py-10 hover:border-2 hover:border-secondary">
+                <img src={websites} height={44} width={44} alt="" />
+                <p className="text-black text-lg font-Courier ">
+                  Websites Building
+                </p>
+                <p className="text-gray-700 mt-5 w-[50%] ">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Rerum, iusto!{" "}
+                </p>
+              </div>
 
-            <div className="flex w-1/4 hover:scale-110 justify-center gap-3  text-center items-center flex-col transition-all delay-[25] rounded-2xl py-10 hover:border-2 hover:border-secondary">
-              <img src={hardwareRepair} height={44} width={44} alt="" />
-              <p className="text-black text-lg  font-Courier">
-                Hardware Reparing
-              </p>
-              <p className="text-gray-700  mt-5 w-[50%]">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum,
-                iusto!{" "}
-              </p>
+              <div className="flex w-1/4 hover:scale-110 justify-center gap-3  text-center items-center flex-col transition-all delay-[25] rounded-2xl py-10 hover:border-2 hover:border-secondary">
+                <img src={hardwareRepair} height={44} width={44} alt="" />
+                <p className="text-black text-lg  font-Courier">
+                  Hardware Reparing
+                </p>
+                <p className="text-gray-700  mt-5 w-[50%]">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Rerum, iusto!{" "}
+                </p>
+              </div>
             </div>
           </div>
         </div>
