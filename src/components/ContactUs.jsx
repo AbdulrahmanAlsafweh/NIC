@@ -5,7 +5,7 @@ export default function ContactUs() {
       <div className="w-screen flex relative  justify-between items-center bg-whitee h-[40vh]  ">
         <p className="font-Courier text-[50px] text-center ml-16 text-blackk font-bold">
           <span className="whitespace-nowrap">Get in</span> <br />
-          touch
+          <span className='text-secondary bg-blackk px-2 rounded-tl-2xl rounded-br-2xl '>touch</span>
         </p>{" "}
         {/* <div className='flex h-[40vh]'>
                 <div>

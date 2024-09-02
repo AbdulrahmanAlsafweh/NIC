@@ -55,18 +55,18 @@ https://dev.socrata.com/
             </ul>
           </div>
         </div>
-        <div className=" mt-auto shadow-gray-400 shadow-sm st w-screen h-screen pt-36 pb-36 flex flex-col">
+        <div className=" mt-auto bg-primary shadow-gray-400 shadow-sm st w-screen h-screen pt-36 pb-36 flex flex-col">
           <div className="flex   pb-2 border-secondary border-b-2 w-fit mx-auto   flex-col">
-            <p className="font-Courier  text-center text-blackk text-[36px] ">
+            <p className="font-Courier  text-center text-white text-[36px] ">
               Our Services
             </p>
-            <p className="text-center text-gray-500 font-Courier text-[18px] ">
+            <p className="text-center text-white font-Courier text-[18px] ">
               We are the best IT team with best services
             </p>
           </div>
 
-          <div className="flex cursor-pointer  justify-around mt-16 flex-row mx-16 ">
-            <div className="bg-primary flex flex-row justify-around h-fit pt-10 pb-10  mx-auto shadow-md shadow-black   w-[100%]   py-10 rounded-lg">
+          <div className="flex cursor-pointer   justify-around mt-16 flex-row mx-16 ">
+            <div className="bg-white flex flex-row justify-around h-fit pt-10 pb-10  mx-auto shadow-md shadow-black   w-[100%]   py-10 rounded-lg">
               <div className="flex w-1/4 gap-3 transition-all hover:scale-110  delay-[25] rounded-2xl py-10 hover:border-2 hover:border-secondary justify-center text-center items-center flex-col">
                 <img src={servers} height={44} width={44} alt="" />
                 <p className="text-black text-lg font-Courier ">
