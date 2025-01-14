@@ -18,34 +18,34 @@
 
 @keyframes run {
     0% {
-        background-image: url('../assets/main-character1.png');
+        background-image: url('../../assets/main-character1.png');
     }
 
     33% {
-        background-image: url('../assets/main-character2.png');
+        background-image: url('../../assets/main-character2.png');
     }
 
     66% {
-        background-image: url('../assets/main-character3.png');
+        background-image: url('../../assets/main-character3.png');
     }
 
     100% {
-        background-image: url('../assets/main-character1.png');
+        background-image: url('../../assets/main-character1.png');
     }
 }
 @keyframes birdFly {
 
 
     0% {
-        background-image: url('../assets/bird1.png');
+        background-image: url('../../assets/bird1.png');
     }
 
     50% {
-        background-image: url('../assets/bird2.png');
+        background-image: url('../../assets/bird2.png');
     }
 
     100% {
-        background-image: url('../assets/bird1.png');
+        background-image: url('../../assets/bird1.png');
     }
 
 }

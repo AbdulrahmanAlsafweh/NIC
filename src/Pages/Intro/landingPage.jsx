@@ -1,20 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
 import KUTE, { onComplete } from "kute.js";
 import "./DinoGame.css";
-import GameOver from "../assets/gameover_text.png";
-import scroll from '../assets/arrow.png'
-import Navbar from "./navbar";
-import arrow from '../assets/back.png'
-import logo from '../assets/nic_head.svg'
-import wMenuI from '../assets/dots.png'
-import phoneCall from '../assets/call.png'
-import video from '../assets/video.png'
-import camera from '../assets/camera.png'
-import record from '../assets/voice.png'
-import attach from '../assets/attach.png'
-import emoji from '../assets/smile.png'
-import user from '../assets/profile.png'
-import sendMessage from '../assets/message.png'
+import GameOver from "../../assets/gameover_text.png";
+import scroll from '../../assets/arrow.png'
+import arrow from '../../assets/back.png'
+import logo from '../../assets/nic_head.svg'
+import wMenuI from '../../assets/dots.png'
+import phoneCall from '../../assets/call.png'
+import video from '../../assets/video.png'
+import camera from '../../assets/camera.png'
+import record from '../../assets/voice.png'
+import attach from '../../assets/attach.png'
+import emoji from '../../assets/smile.png'
+import user from '../../assets/profile.png'
+import sendMessage from '../../assets/message.png'
 const DinoGame = () => {
   // The needed time for whatsapp chatting
   const date = new Date();
@@ -976,7 +975,6 @@ ${hideHUD ? "hidden" : ""}
        `}
         ref={scrollDownRef}
       >
-        <Navbar />
       </div>
     </div>
   );
