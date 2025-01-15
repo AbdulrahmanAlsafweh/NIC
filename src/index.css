@@ -3,7 +3,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* add the main font */
+@font-face {
+  font-family: 'PIGARNOS_NEUE';
+  font-weight: normal;
+  font-style: normal;
+  src: url(/build/fonts/PIGARNOS_NEUE_Regular/PIGARNOS_NEUE_Regular.ttf);
+}
+
+/* add the slogan font */
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: normal;
+  font-style: normal;
+  src: url(/build/fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+}
+
 body {
+  color: black;
   background-color: white;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

@@ -11,6 +11,8 @@ module.exports = {
       },
       fontFamily: {
         Courier: ["Courier Prime"],
+        Main: ["PIGARNOS_NEUE", "sans-serif"],
+        Secondary: ["Montserrat" ,'sans-serif'],
       },
       backgroundImage: {
         bg: "url('./assets/banner.png')",
@@ -49,5 +51,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("daisyui")],
+  plugins: [],
 };
