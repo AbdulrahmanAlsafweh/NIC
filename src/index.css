@@ -36,3 +36,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* for consult type request */
+.ant-select-item-option-content {
+  white-space: normal !important;
+  word-wrap: break-word !important;
+}
+
+
+/* home page carousel buttons  */
+.slick-active button {
+  background-color:  black !important;
+}
+
+.slick-dots li button {
+  background-color: gray !important;
+}
+
