@@ -54,3 +54,7 @@ code {
   background-color: gray !important;
 }
 
+.scoped-corner {
+  -webkit-mask-image: radial-gradient(circle at top right, transparent 40px, white 41px);
+  mask-image: radial-gradient(circle at top right, transparent 40px, white 41px);
+}
